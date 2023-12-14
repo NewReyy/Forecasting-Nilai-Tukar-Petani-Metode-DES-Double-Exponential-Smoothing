@@ -1,0 +1,701 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #e1f7e1);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#tambah {
+    padding: 8px 15px;
+    color: #ffffff; /* Warna teks putih */
+    border: 1px solid #ffffff; /* Garis tepi putih */
+    cursor: pointer;
+    background: linear-gradient(to bottom, #2faa2f, #1a751a); /* Warna latar menggunakan gradient hijau */
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease; /* Efek transisi yang halus */
+}
+
+#tambah:hover {
+    background: #ffffff; /* Warna latar saat di-hover */
+    color: #333333; /* Warna teks saat di-hover */
+    border: 1px solid #333333; /* Garis tepi saat di-hover */
+}
+
+
+#details {
+    padding: 2px 1px;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #c5c5c5, #e3e3e3);
+    margin-right: 5px;
+}
+
+#edit, #hapus {
+    padding: 8px 15px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+#edit {
+    background: linear-gradient(to bottom, #4CAF50, #45a049); /* Warna latar menggunakan gradient hijau toska */
+}
+
+#hapus {
+    background: #FFA500; /* Warna latar oranye muda */
+}
+
+#edit:hover {
+    background: #FFA500; /* Warna latar saat di-hover menjadi oranye muda */
+    color: #333333;
+    border: 1px solid #333333;
+}
+
+#hapus:hover {
+    background: #c81919; /* Warna latar saat di-hover menjadi merah */
+    color: #ffffff; /* Warna teks saat di-hover menjadi putih */
+    border: 1px solid #a61414; /* Garis tepi saat di-hover menjadi merah tua */
+}
+
+
+#bg-login {
+    display: flex;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffff, #e1f7e1);
+}
+
+.box-login {
+    width: 300px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.box-login h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#signup {
+    margin: 60px 0;
+    display: flex;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffff, #e1f7e1);
+}
+
+.signup {
+    width: 300px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.signup h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Common styles for both input controls */
+.input-control,
+.input-control-2 {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Style untuk dropdown */
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    appearance: none; /* Hilangkan default arrow di beberapa browser */
+    cursor: pointer;
+}
+
+/* Style untuk opsi pada dropdown */
+option {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+}
+
+/* Hover effect untuk opsi */
+option:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Gaya untuk dropdown saat di-focus */
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Gaya untuk dropdown saat di-hover */
+select:hover {
+    border-color: #007bff;
+}
+
+/* Style for the first input control */
+.input-control {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-control input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.input-control::before {
+    content: attr(placeholder);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #999;
+    transition: top 0.3s, font-size 0.3s;
+    pointer-events: none;
+}
+
+.input-control input:focus + ::before,
+.input-control input:not(:placeholder-shown) + ::before {
+    top: 5px;
+    font-size: 12px;
+    color: #007bff; /* Ganti warna teks placeholder saat fokus atau input tidak kosong */
+}
+
+.input-control:hover {
+    border-color: #007bff; /* Ganti warna garis saat di-hover */
+}
+
+/* Style for the second input control */
+.input-control-2 {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.input-control-2 input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.input-control-2::before {
+    content: attr(placeholder);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #999;
+    transition: top 0.3s, font-size 0.3s;
+    pointer-events: none;
+}
+
+.input-control-2 input:focus + ::before,
+.input-control-2 input:not(:placeholder-shown) + ::before {
+    top: 0;
+    font-size: 10px;
+    color: #28a745; /* Ganti warna teks placeholder saat fokus atau input tidak kosong */
+}
+
+.input-control-2:hover {
+    border-color: #28a745; /* Ganti warna garis saat di-hover */
+}
+
+.btn {
+    background: linear-gradient(to bottom, #4CAF50, #45a049); /* Warna hijau */
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #FFA500, #FF8C00); /* Warna oranye muda saat di-hover */
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+
+
+/* Reset margin and padding for better consistency */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a box-sizing border-box to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Responsive styles */
+header {
+    background: linear-gradient(to bottom, #c70039, #a4002d);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden; /* Clear the float */
+}
+
+header h1 {
+    padding: 10px 0;
+}
+
+header ul {
+    margin-top: 10px;
+    list-style: none;
+}
+
+header ul li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+header ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+header ul li a:hover {
+    background: #ffc107;
+    color: #333333;
+}
+
+@media (min-width: 768px) {
+    /* Apply styles for screens with a minimum width of 768px */
+    header h1 {
+        float: left;
+        padding: 10px 0;
+    }
+
+    header ul {
+        float: right;
+        margin-left: 0;
+    }
+
+    header ul li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    header ul li:last-child {
+        margin-right: 0;
+    }
+}
+
+
+footer {
+    padding: 25px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.section {
+    padding: 25px 0;
+}
+
+.box {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    border: 1px solid #ccc;
+    padding: 15px;
+    height: max-content;
+    box-sizing: border-box;
+    margin: 10px 0 25px 0;
+}
+
+.box:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.table th {
+    background-color: #4CAF50; /* Warna hijau toska */
+    color: #ffffff;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #8BC34A; /* Warna latar untuk baris ganjil (hijau muda) */
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna latar untuk baris genap (putih) */
+}
+
+.table tr:hover {
+    background-color: #FFA500; /* Warna latar hover (oranye muda) */
+}
+
+.table td {
+    color: #333333;
+}
+
+.table .highlight {
+    background-color: #d3eecd; /* Warna latar untuk elemen yang ingin di-highlight (hijau muda) */
+}
+
+.table tr {
+    transition: background-color 0.3s ease;
+}
+
+.col-5 {
+    width: 39%;
+    height: 470px;
+    border: 1px solid;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+}
+
+.col-3 {
+    border: 1px solid;
+    text-align: center;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.col-3 p {
+    font-size: 70px;
+}
+
+.col-3 .panel-header {
+    background: linear-gradient(to bottom, #d6f1b4, #c1e8a6);
+}
+
+.col-3 .panel-footer {
+    background: linear-gradient(to bottom, #b4f1ed, #9ee4e0);
+}
+
+.edit {
+    background: linear-gradient(to bottom, #2aaba9, #1a807f);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 5px; /* Menambahkan sudut yang lebih lembut */
+    transition: background 0.3s ease; /* Efek transisi pada latar belakang saat di-hover */
+}
+
+.edit:hover {
+    background: linear-gradient(to bottom, #e6ac00, #ffbf00); /* Warna latar berubah menjadi oranye saat di-hover */
+}
+
+.tambah {
+    background: linear-gradient(to bottom, #2faa2f, #1a751a);
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 5px; /* Menambahkan sudut yang lebih lembut */
+    transition: background 0.3s ease; /* Efek transisi pada latar belakang saat di-hover */
+}
+
+.tambah:hover {
+    background: linear-gradient(to bottom, #e64d00, #ff751a); /* Warna latar berubah menjadi oranye saat di-hover */
+}
+
+.hitung {
+    background: linear-gradient(to bottom, #8bc34a, #689f38);
+    border: none;
+    color: white;
+    padding: 10px; /* Menambah padding agar tombol lebih mudah diklik */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; /* Meningkatkan ukuran font untuk membaca lebih baik */
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px; /* Menambahkan sudut yang lebih lembut */
+    transition: background 0.3s ease; /* Efek transisi pada latar belakang saat di-hover */
+}
+
+.hitung:hover {
+    background: linear-gradient(to bottom, #e64d00, #ff751a); /* Warna latar berubah saat di-hover */
+}
+
+.hitung-mse-mape {
+    width: 48%;
+    height: 65px;
+    border: 1px solid #ccc;
+    text-align: center;
+    align-items: center;
+    display: flex; /* Mengaktifkan flexbox */
+    justify-content: center; /* Menyusun item secara horizontal di tengah */
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0 1% 15px 1%;
+    transition: background 0.3s ease;
+}
+
+.hitung-mse-mape:hover {
+    background: #ffc107; /* Warna latar berubah saat di-hover */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #ffffff, #e1f7e1);
+}
+
+header {
+    background: linear-gradient(to bottom, #2faa2f, #1a751a);
+    color: #fff;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: #fff;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-link {
+    padding: 20px 15px;
+    display: inline-block;
+}
+
+.section {
+    background: linear-gradient(to bottom, #ffffff, #e1f7e1);
+    padding: 25px 0;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+h3 {
+    color: #2faa2f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    background-color: #fff;
+    padding: 30px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h3 {
+    color: #333;
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.col-3 {
+    width: 96%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.panel-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.panel-body {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-footer {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.panel-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the "Tabel Data Aktual" link */
+.panel-footer a.btn-primary {
+    background-color: #fff;
+    color: #3498db;
+    padding: 8px 15px;
+    border-radius: 3px;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.panel-footer a.btn-primary:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Add subtle box-shadow on hover for the entire panel */
+.panel:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add transition to smooth out the box-shadow change */
+.panel {
+    transition: box-shadow 0.3s;
+}
+
+
+
+footer {
+    background: linear-gradient(to bottom, #2faa2f, #1a751a);
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer small {
+    display: block;
+}
+
